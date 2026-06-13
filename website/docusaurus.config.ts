@@ -3,15 +3,15 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Hermes Agent',
-  tagline: 'The self-improving AI agent',
-  favicon: 'img/favicon.ico',
+  title: 'Nautilus Agent',
+  tagline: 'AI for Scientists. Built on Hermes Agent.',
+  favicon: 'img/favicon.png',
 
-  url: 'https://hermes-agent.nousresearch.com',
-  baseUrl: '/docs/',
+  url: 'https://tj-coding.github.io',
+  baseUrl: '/nautilus-agent/',
 
-  organizationName: 'NousResearch',
-  projectName: 'hermes-agent',
+  organizationName: 'tj-coding',
+  projectName: 'nautilus-agent',
 
   onBrokenLinks: 'warn',
 
@@ -24,62 +24,20 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-Hans'],
-    localeConfigs: {
-      en: {
-        label: 'English',
-      },
-      'zh-Hans': {
-        label: '简体中文',
-        htmlLang: 'zh-Hans',
-      },
-    },
+    locales: ['en'],
   },
 
   themes: [
     '@docusaurus/theme-mermaid',
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
-      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       ({
         hashed: true,
-        language: ['en', 'zh'],
+        language: ['en'],
         indexBlog: false,
         docsRouteBasePath: '/',
-        // Disabled: appends ?_highlight=... to URLs (before the #anchor),
-        // which makes copy/pasted doc links ugly. Ctrl+F on the page is fine.
         highlightSearchTermsOnTargetPage: false,
-        // Exclude the auto-generated per-skill catalog pages from search.
-        // There are hundreds of them and they dominate results for generic
-        // terms, drowning out the real user-guide / reference docs.
-        // The two human-written catalog indexes (reference/skills-catalog,
-        // reference/optional-skills-catalog) remain indexed.
-        //
-        // Note: ignoreFiles matches `route` (baseUrl stripped, no leading
-        // slash). With baseUrl '/docs/', `/docs/user-guide/skills/bundled/x`
-        // becomes 'user-guide/skills/bundled/x'.
-        ignoreFiles: [
-          /^user-guide\/skills\/bundled\//,
-          /^user-guide\/skills\/optional\//,
-        ],
       }),
-    ],
-  ],
-
-  plugins: [
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        // Static-host redirects for renamed doc pages (GitHub Pages can't
-        // do server-side redirects). Paths are relative to baseUrl (/docs/).
-        redirects: [
-          {
-            // Renamed in #44470 (Automation Blueprints terminology rebrand)
-            from: '/guides/automation-templates',
-            to: '/guides/automation-blueprints',
-          },
-        ],
-      },
     ],
   ],
 
@@ -88,9 +46,9 @@ const config: Config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/',  // Docs at the root of /docs/
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/NousResearch/hermes-agent/edit/main/website/',
+          editUrl: 'https://github.com/tj-coding/nautilus-agent/edit/main/website/',
         },
         blog: false,
         theme: {
@@ -101,7 +59,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/hermes-agent-banner.png',
+    image: 'img/nautilus-agent-banner.png',
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: true,
@@ -113,9 +71,9 @@ const config: Config = {
       },
     },
     navbar: {
-      title: 'Hermes Agent',
+      title: 'Nautilus Agent',
       logo: {
-        alt: 'Hermes Agent',
+        alt: 'Nautilus Agent',
         src: 'img/logo.png',
       },
       items: [
@@ -131,26 +89,22 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://hermes-agent.nousresearch.com/desktop',
-          label: 'Download',
+          href: 'https://nousresearch.com',
+          label: 'Built on Hermes',
           position: 'left',
         },
         {
-          type: 'localeDropdown',
+          href: 'https://tj-coding.github.io/nautilus-community/',
+          label: 'Community',
           position: 'right',
         },
         {
-          href: 'https://hermes-agent.nousresearch.com',
-          label: 'Home',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/NousResearch/hermes-agent',
+          href: 'https://github.com/tj-coding/nautilus-agent',
           label: 'GitHub',
           position: 'right',
         },
         {
-          href: 'https://discord.gg/NousResearch',
+          href: 'https://discord.gg/2n3gTN2rn7',
           label: 'Discord',
           position: 'right',
         },
@@ -171,26 +125,26 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            { label: 'Discord', href: 'https://discord.gg/NousResearch' },
-            { label: 'GitHub Issues', href: 'https://github.com/NousResearch/hermes-agent/issues' },
-            { label: 'Skills Hub', href: 'https://agentskills.io' },
+            { label: 'Discord', href: 'https://discord.gg/2n3gTN2rn7' },
+            { label: 'GitHub Issues', href: 'https://github.com/tj-coding/nautilus-agent/issues' },
+            { label: 'Nautilus Community', href: 'https://tj-coding.github.io/nautilus-community/' },
           ],
         },
         {
-          title: 'More',
+          title: 'Upstream',
           items: [
-            { label: 'Desktop Download', href: 'https://hermes-agent.nousresearch.com/desktop' },
-            { label: 'GitHub', href: 'https://github.com/NousResearch/hermes-agent' },
+            { label: 'Hermes Agent', href: 'https://hermes-agent.nousresearch.com' },
             { label: 'Nous Research', href: 'https://nousresearch.com' },
+            { label: 'Upstream GitHub', href: 'https://github.com/NousResearch/hermes-agent' },
           ],
         },
       ],
-      copyright: `Built by <a href="https://nousresearch.com">Nous Research</a> · MIT License · ${new Date().getFullYear()}`,
+      copyright: `Built on <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a> by <a href="https://nousresearch.com">Nous Research</a> · Branded for science by the Nautilus community · MIT License · ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['bash', 'yaml', 'json', 'python', 'toml'],
+      additionalLanguages: ['bash', 'yaml', 'json', 'python', 'toml', 'r'],
     },
     mermaid: {
       theme: {light: 'neutral', dark: 'dark'},
