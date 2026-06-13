@@ -108,6 +108,59 @@ class TestBuiltinSkins:
         assert skin.get_color("completion_menu_meta_current_bg") == "#5A260D"
         assert skin.get_color("selection_bg") == "#5A260D"
 
+    def test_nautilus_skin_loads(self):
+        from hermes_cli.skin_engine import load_skin
+
+        skin = load_skin("nautilus")
+        assert skin.name == "nautilus"
+        assert skin.tool_prefix == "│"
+        assert skin.get_color("banner_border") == "#2A9D8F"
+        assert skin.get_color("banner_title") == "#A8E6CF"
+        assert skin.get_color("banner_dim") == "#1A5F5A"
+        assert skin.get_color("response_border") == "#5DB8A8"
+        assert skin.get_color("status_bar_bg") == "#0A2F2C"
+        assert skin.get_branding("agent_name") == "Nautilus Agent"
+        assert skin.get_branding("goodbye") == "Dive complete! 🐚"
+        assert skin.get_branding("prompt_symbol") == "🐚"
+        assert skin.get_branding("response_label") == " 🐚 Nautilus "
+
+    def test_nautilus_has_spinner_customization(self):
+        from hermes_cli.skin_engine import load_skin
+
+        skin = load_skin("nautilus")
+        wings = skin.get_spinner_wings()
+        assert len(wings) > 0
+        assert isinstance(wings[0], tuple)
+        assert len(wings[0]) == 2
+
+    def test_nautilus_has_banner_art(self):
+        from hermes_cli.skin_engine import load_skin
+
+        skin = load_skin("nautilus")
+        assert skin.banner_logo != ""
+        assert "Nautilus" in skin.banner_logo or "nautilus" in skin.banner_logo.lower()
+        assert skin.banner_hero != ""
+        assert "🐚" in skin.banner_hero
+
+    def test_nautilus_listed_in_skins(self):
+        from hermes_cli.skin_engine import list_skins
+
+        skins = list_skins()
+        names = [s["name"] for s in skins]
+        assert "nautilus" in names
+        nautilus = [s for s in skins if s["name"] == "nautilus"][0]
+        assert nautilus["source"] == "builtin"
+        assert "ocean" in nautilus["description"].lower() or "science" in nautilus["description"].lower()
+
+    def test_nautilus_branding_overrides_default(self):
+        from hermes_cli.skin_engine import load_skin
+
+        skin = load_skin("nautilus")
+        default = load_skin("default")
+        assert skin.get_branding("agent_name") != default.get_branding("agent_name")
+        assert skin.get_branding("agent_name") == "Nautilus Agent"
+        assert default.get_branding("agent_name") == "Hermes Agent"
+
     def test_unknown_skin_falls_back_to_default(self):
         from hermes_cli.skin_engine import load_skin
         skin = load_skin("nonexistent_skin_xyz")

@@ -104,6 +104,7 @@ BUILT-IN SKINS
 - ``slate``   — Cool blue developer-focused theme
 - ``daylight`` — Light background theme with dark text and blue accents
 - ``warm-lightmode`` — Warm brown/gold text for light terminal backgrounds
+- ``nautilus`` — Ocean science theme — deep teal and seafoam for researchers
 
 USER SKINS
 ==========
@@ -641,6 +642,83 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
 [#F29C38]⠀⠀⠀⠀⠀⠀⠀⠀⣰⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀[/]
 [#F29C38]⠀⠀⠀⠀⠀⠀⠀⣼⡟⠀⠀⢻⣧⠀⠀⠀⠀⠀⠀⠀⠀[/]
 [dim #7A3511]⠀⠀⠀⠀⠀⠀⠀tail flame lit⠀⠀⠀⠀⠀⠀⠀⠀[/]""",
+    },
+    "nautilus": {
+        "name": "nautilus",
+        "description": "Ocean science theme — deep teal and seafoam for researchers",
+        "colors": {
+            "banner_border": "#2A9D8F",
+            "banner_title": "#A8E6CF",
+            "banner_accent": "#5DB8A8",
+            "banner_dim": "#1A5F5A",
+            "banner_text": "#E8F7F4",
+            "ui_accent": "#5DB8A8",
+            "ui_label": "#88D8B0",
+            "ui_ok": "#4caf50",
+            "ui_error": "#ef5350",
+            "ui_warn": "#ffa726",
+            "prompt": "#E8F7F4",
+            "input_rule": "#2A9D8F",
+            "response_border": "#5DB8A8",
+            "status_bar_bg": "#0A2F2C",
+            "status_bar_text": "#E8F7F4",
+            "status_bar_strong": "#A8E6CF",
+            "status_bar_dim": "#3D7A73",
+            "status_bar_good": "#6ED7B0",
+            "status_bar_warn": "#5DB8A8",
+            "status_bar_bad": "#D4A373",
+            "status_bar_critical": "#E07A5F",
+            "session_label": "#88D8B0",
+            "session_border": "#3D7A73",
+            "selection_bg": "#1A4A45",
+            "completion_menu_bg": "#0A2F2C",
+            "completion_menu_current_bg": "#1A5F5A",
+            "completion_menu_meta_bg": "#0F3D38",
+            "completion_menu_meta_current_bg": "#2A7A72",
+        },
+        "spinner": {
+            "waiting_faces": ["(🐚)", "(≈)", "(∿)", "(◌)", "(○)"],
+            "thinking_faces": ["(🐚)", "(Ψ)", "(≈)", "(⌁)", "(∿)"],
+            "thinking_verbs": [
+                "sounding depths", "charting currents", "reading samples",
+                "calibrating instruments", "tracing isotopes", "measuring pH",
+                "logging data", "sequencing reads",
+            ],
+            "wings": [
+                ["⟪≈", "≈⟫"],
+                ["⟪∿", "∿⟫"],
+                ["⟪🐚", "🐚⟫"],
+                ["⟪○", "○⟫"],
+            ],
+        },
+        "branding": {
+            "agent_name": "Nautilus Agent",
+            "welcome": "Welcome to Nautilus Agent! Type your message or /help for commands.",
+            "goodbye": "Dive complete! 🐚",
+            "response_label": " 🐚 Nautilus ",
+            "prompt_symbol": "🐚",
+            "help_header": "(🐚) Available Commands",
+        },
+        "tool_prefix": "│",
+        "banner_logo": """[bold #A8E6CF]███╗   ██╗ █████╗ ██╗   ██╗████████╗██╗██╗     ██╗   ██╗███████╗       █████╗  ██████╗ ███████╗███╗   ██╗████████╗[/]
+[bold #88D8B0]████╗  ██║██╔══██╗██║   ██║╚══██╔══╝██║██║     ██║   ██║██╔════╝      ██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝[/]
+[#5DB8A8]██╔██╗ ██║███████║██║   ██║   ██║   ██║██║     ██║   ██║███████╗█████╗███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║[/]
+[#459A8C]██║╚██╗██║██╔══██║██║   ██║   ██║   ██║██║     ██║   ██║╚════██║╚════╝██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║[/]
+[#2A9D8F]██║ ╚████║██║  ██║╚██████╔╝   ██║   ██║███████╗╚██████╔╝███████║      ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║[/]
+[#1A5F5A]╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝╚══════╝ ╚═════╝ ╚══════╝      ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝[/]""",
+        "banner_hero": """[#2A9D8F]⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠶⠶⠶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀[/]
+[#5DB8A8]⠀⠀⠀⠀⠀⠀⣴⠟⠁⠀⠀🐚⠀⠀⠈⠻⣦⠀⠀⠀⠀⠀⠀[/]
+[#88D8B0]⠀⠀⠀⠀⠀⣼⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣧⠀⠀⠀⠀⠀[/]
+[#A8E6CF]⠀⠀⠀⠀⢰⡟⠀⠀⣀⣤⣤⣤⣀⠀⠀⠀⢻⡆⠀⠀⠀⠀[/]
+[#A8E6CF]⠀⠀⣠⡾⠛⠁⣠⣾⠟⠉⠀⠉⠻⣷⣄⠀⠈⠛⢷⣄⠀⠀[/]
+[#88D8B0]⠀⣼⠟⠀⢀⣾⠟⠁⠀⠀⠀⠀⠀⠈⠻⣷⡀⠀⠻⣧⠀[/]
+[#5DB8A8]⢸⡟⠀⠀⣿⡟⠀⠀⠀∿⠀⠀⠀⠀⢻⣿⠀⠀⢻⡇[/]
+[#2A9D8F]⠀⠻⣦⡀⠘⢿⣧⡀⠀⠀⠀⠀⠀⢀⣼⡿⠃⢀⣴⠟⠀[/]
+[#1A5F5A]⠀⠀⠈⠻⣦⣀⠙⢿⣷⣤⣤⣤⣾⡿⠋⣀⣴⠟⠁⠀⠀[/]
+[#1A5F5A]⠀⠀⠀⠀⠈⠙⠛⠶⠤⠭⠭⠤⠶⠛⠋⠁⠀⠀⠀⠀[/]
+[#5DB8A8]⠀⠀⠀⠀⠀⠀⠀⠀⣰⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀[/]
+[#88D8B0]⠀⠀⠀⠀⠀⠀⠀⣼⡟⠀⠀⢻⣧⠀⠀⠀⠀⠀⠀⠀⠀[/]
+[dim #1A5F5A]⠀⠀⠀⠀⠀⠀⠀science at depth⠀⠀⠀⠀⠀⠀⠀⠀[/]""",
     },
 }
 
