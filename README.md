@@ -166,7 +166,7 @@ Quick start for contributors:
 ```bash
 git clone https://github.com/tj-coding/nautilus-agent.git
 cd nautilus-agent
-./setup-hermes.sh     # installs uv, creates venv, installs .[all], symlinks ~/.local/bin/nautilus
+./setup-nautilus.sh     # installs uv, creates venv, installs .[all], symlinks ~/.local/bin/nautilus
 ./nautilus              # auto-detects the venv, no need to `source` first
 ```
 
