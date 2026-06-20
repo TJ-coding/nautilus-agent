@@ -4,7 +4,7 @@
 
 # Nautilus Agent ⚚
 <p align="center">
-  <a href="https://tj-coding.github.io/nautilus-community/">Nautilus Community</a> | <a href="https://tj-coding.github.io/nautilus-community/docs">Documentation</a>
+  <a href="https://tj-coding.github.io/nautilus-community/">Nautilus Community</a> | <a href="https://tj-coding.github.io/nautilus-agent/">Documentation</a>
 </p>
 <p align="center">
   <a href="https://tj-coding.github.io/nautilus-community/docs/"><img src="https://img.shields.io/badge/Docs-nautilus--community-008080?style=for-the-badge" alt="Documentation"></a>
